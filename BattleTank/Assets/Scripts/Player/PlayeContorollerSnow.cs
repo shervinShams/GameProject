@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -174,13 +175,24 @@ public class PlayeContorollerSnow : MonoBehaviour {
 
     public void ResetPosition()
     {
-        //transform.localPosition = Vector3.zero;
-        transform.localRotation = new Quaternion(0.0f, 0.0f, (SecondPlayer) ? 180.0f : 0.0f, 0.0f);
-        animator.SetBool("isKilled", false);
-        playerHealth.Show();
-        playerReload.Show();
-        if (burnParticles.isPlaying)
-            burnParticles.Stop();
+        try
+        {
+
+            // transform.localPosition = Vector3.zero;
+            transform.localRotation = new Quaternion(0.0f, 0.0f, (SecondPlayer) ? 180.0f : 0.0f, 0.0f);
+            animator.SetBool("isKilled", false);
+            playerHealth.Show();
+            playerReload.Show();
+            if (burnParticles.isPlaying)
+                burnParticles.Stop();
+
+        }
+        catch (NullReferenceException e)
+        {
+
+
+            Debug.Log(e);
+        }
     }
 
     public void SetNextBullet(GameObject bullet)

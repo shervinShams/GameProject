@@ -55,15 +55,13 @@ MonoBehaviour:
   darkeningImage: {fileID: 0}
   quitingTime: 1
   restartDelay: 8
-  menuController: {fileID: 0}
   mainMenu: {fileID: 0}
-  playerHealth1: {fileID: 0}
   player1: {fileID: 0}
   player2: {fileID: 0}
   winText: {fileID: 0}
   isGameBegan: 1
-  isPaused: 0
-  isMenuShown: 0
+  isPaused: 1
+  isMenuShown: 1
   HeartAppearRate: 15
   NuclearAppearRate: 20
 --- !u!114 &114443045476793128
@@ -86,6 +84,8 @@ MonoBehaviour:
   destructibleCount: 60
   destructibleTiles:
   - {fileID: 1153479553130304, guid: ee3a087cb426cf94782449832ce634e7, type: 2}
+  lavaFireObjCount: 0
+  lavaFireTiles: []
   heartObject: {fileID: 1880601487300334, guid: 04e4f162f01d178478ea2a9aee6027b5,
     type: 2}
   nuclearPickup: {fileID: 1691443932755974, guid: 231e07ec3165b8f47a8d938a627ad0f6,

@@ -7,7 +7,7 @@ public class ScoreUpdateSnow : MonoBehaviour {
 
     public GameManagerSnow gameManager;
     public int playerNumber = 1;
-    public GameObject score;
+   // public GameObject score;
   // public  PlayerPrefs playerScore;
   //  int playerScore;
    

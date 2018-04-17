@@ -2234,19 +2234,9 @@ Prefab:
       objectReference: {fileID: 1349789477}
     - target: {fileID: 114282594640318900, guid: 1d16f1f8fa2948e4cbf1726260a51205,
         type: 2}
-      propertyPath: menuController
-      value: 
-      objectReference: {fileID: 173661341}
-    - target: {fileID: 114282594640318900, guid: 1d16f1f8fa2948e4cbf1726260a51205,
-        type: 2}
       propertyPath: mainMenu
       value: 
       objectReference: {fileID: 173661336}
-    - target: {fileID: 114282594640318900, guid: 1d16f1f8fa2948e4cbf1726260a51205,
-        type: 2}
-      propertyPath: playerHealth1
-      value: 
-      objectReference: {fileID: 1451592685}
     - target: {fileID: 114282594640318900, guid: 1d16f1f8fa2948e4cbf1726260a51205,
         type: 2}
       propertyPath: player1
@@ -3186,12 +3176,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1371769256}
---- !u!114 &1451592685 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114278771786399730, guid: 47ce61c09194c26489a03621d2ba3777,
-    type: 2}
-  m_PrefabInternal: {fileID: 221297111}
-  m_Script: {fileID: 11500000, guid: 68ec06f2a368edb4580a0f35b4ef4a2a, type: 3}
 --- !u!1 &1477891886
 GameObject:
   m_ObjectHideFlags: 0

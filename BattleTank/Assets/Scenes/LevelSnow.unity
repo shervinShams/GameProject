@@ -718,7 +718,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 489696414}
   playerNumber: 2
-  score: {fileID: 1076959580378808, guid: ae4ad0dc3f7954641b4be6a6a807701d, type: 2}
 --- !u!114 &259074600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1724,11 +1723,6 @@ Prefab:
       propertyPath: darkeningImage
       value: 
       objectReference: {fileID: 997395153}
-    - target: {fileID: 114096035619882458, guid: f45e26727ac162a4f8628601635538eb,
-        type: 2}
-      propertyPath: menuController
-      value: 
-      objectReference: {fileID: 1730237514}
     - target: {fileID: 114096035619882458, guid: f45e26727ac162a4f8628601635538eb,
         type: 2}
       propertyPath: player1
@@ -3055,7 +3049,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 489696414}
   playerNumber: 1
-  score: {fileID: 1158756411255710, guid: bcc71cfccfeab0b438d03eea29502b31, type: 2}
 --- !u!114 &1656958150
 MonoBehaviour:
   m_ObjectHideFlags: 0

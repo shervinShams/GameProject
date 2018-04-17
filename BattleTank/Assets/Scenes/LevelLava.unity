@@ -501,7 +501,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 615563303}
   playerNumber: 1
-  score: {fileID: 1158756411255710, guid: bcc71cfccfeab0b438d03eea29502b31, type: 2}
 --- !u!114 &88683202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3753,7 +3752,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 615563303}
   playerNumber: 2
-  score: {fileID: 1076959580378808, guid: ae4ad0dc3f7954641b4be6a6a807701d, type: 2}
 --- !u!114 &1664805477
 MonoBehaviour:
   m_ObjectHideFlags: 0

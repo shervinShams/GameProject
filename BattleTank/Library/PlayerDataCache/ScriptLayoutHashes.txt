@@ -18,7 +18,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 c2f3590a9c14509470e3aeb29b196f42 Assembly-CSharp.dll:.ScoreUpdater
-e926888763344c7bb46e9aaa58775f89 Assembly-CSharp.dll:.BoardManager
+317c9eea8cd6b1811157490c0815e447 Assembly-CSharp.dll:.BoardManager
 c024d2ae112ba1fc441b9c069e25d062 Assembly-CSharp.dll:.GameManagerLava
 2c3f8a10aa92d56cbd543e5e99e174f6 Assembly-CSharp.dll:.PlayerReload
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
@@ -122,7 +122,7 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
-04c5226933f1579d35c9b9fdd6a1e8a7 Assembly-CSharp.dll:.ScoreUpdaterLava
+695d6d800957c1b224595da14099423b Assembly-CSharp.dll:.ScoreUpdaterLava
 b24f5a077bdcdbaef963e38666017f3e Assembly-CSharp.dll:.PlayerControllerLava
 39e444af0582d646d6549ac38f36b7be Assembly-CSharp.dll:.AtomicPickup
 227c9b88adcffdc44f95004f02533561 Assembly-CSharp.dll:.PlayeContorollerSnow
@@ -162,5 +162,5 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 a60876d272cb816316bb3b40f83ca17a Assembly-CSharp.dll:.GameManager
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 ae8f0d6b7445e284a674a2e5d6d3c114 Assembly-CSharp.dll:.MainMenuContoller
-8e0462f1e5c9e4151a90bc91436a1e85 Assembly-CSharp.dll:.ScoreUpdateSnow
+178b889f5d3197e52cac3d1c9a66a318 Assembly-CSharp.dll:.ScoreUpdateSnow
 2e0df071e1818b153b8e47b62db975d4 Assembly-CSharp.dll:.PlayerController

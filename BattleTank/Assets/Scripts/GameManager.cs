@@ -153,9 +153,12 @@ public class GameManager : MonoBehaviour
 
     public static bool isGamePaused()
     {
+       
         
-        GameObject gManager = GameObject.Find("GameManager");
-        return gManager.GetComponent<GameManager>().isPaused;
+      GameObject gManager = GameObject.Find("GameManager");
+      return gManager.GetComponent<GameManager>().isPaused;
+     
+       
     }
 
     public void StartGame()

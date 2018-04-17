@@ -25,11 +25,11 @@ public class BoardManager : MonoBehaviour
     public GameObject[] floorTiles;
     public GameObject[] borderWallTiles;
 
-    public int destructibleCount = 100;
+    public int destructibleCount = 80;
     public GameObject[] destructibleTiles;
 
-    //public int lavaFireObj = 20;
-    //public GameObject[] lavaFireTiles;
+    public int lavaFireObjCount = 20;
+    public GameObject[] lavaFireTiles;
 
     public GameObject heartObject;
     public GameObject nuclearPickup;
@@ -99,10 +99,10 @@ public class BoardManager : MonoBehaviour
             Vector3 randomPosition = RandomPosition();
             GameObject tileChoice = tileArray[Random.Range(0, tileArray.Length)];
             GameObject instance = Instantiate(tileChoice, randomPosition, Quaternion.identity);
-            //GameObject tileChoicelava = tileArray[Random.Range(0, tileArray.Length)];
-            //GameObject instanceLava = Instantiate(tileChoicelava, randomPosition, Quaternion.identity);
-           // instanceLava.transform.SetParent(boardHolder);
-            instance.transform.SetParent(boardHolder);
+            GameObject tileChoicelava = tileArray[Random.Range(0, tileArray.Length)];
+            GameObject instanceLava = Instantiate(tileChoicelava, randomPosition, Quaternion.identity);
+           instanceLava.transform.SetParent(boardHolder);
+           // instance.transform.SetParent(boardHolder);
                 //do not touch this part !!!
          
         }
@@ -148,7 +148,7 @@ public class BoardManager : MonoBehaviour
         AddRandomGrassField();
        // AddRandomLavaObject();
         LayoutObjectAtRandom(destructibleTiles, new Count(destructibleCount / 2, destructibleCount));
-       // LayoutObjectAtRandom(lavaFireTiles, new Count(lavaFireObj / 2, lavaFireObj));
+        LayoutObjectAtRandom(lavaFireTiles, new Count(lavaFireObjCount / 4, lavaFireObjCount));
     }
 
     void ClearBoard()

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ScoreUpdaterLava : MonoBehaviour {
     public GameManagerLava gameManager;
     public int playerNumber = 1;
-    public GameObject score;
+    //public GameObject score;
     // public  PlayerPrefs playerScore;
    // int playerScore;
 

@@ -61,6 +61,9 @@ MonoBehaviour:
   destructibleCount: 30
   destructibleTiles:
   - {fileID: 1153479553130304, guid: ee3a087cb426cf94782449832ce634e7, type: 2}
+  lavaFireObjCount: 20
+  lavaFireTiles:
+  - {fileID: 1794989834259904, guid: f997f83dd1d4f004698de85a6bcf145c, type: 2}
   heartObject: {fileID: 1880601487300334, guid: 04e4f162f01d178478ea2a9aee6027b5,
     type: 2}
   nuclearPickup: {fileID: 1691443932755974, guid: 231e07ec3165b8f47a8d938a627ad0f6,
@@ -85,7 +88,7 @@ MonoBehaviour:
   winText: {fileID: 0}
   gameOverTxt: {fileID: 0}
   isGameBegan: 1
-  isPaused: 0
-  isMenuShown: 0
+  isPaused: 1
+  isMenuShown: 1
   HeartAppearRate: 15
   NuclearAppearRate: 20

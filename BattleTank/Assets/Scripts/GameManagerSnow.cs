@@ -186,7 +186,7 @@ public class GameManagerSnow : MonoBehaviour {
             Player2Score =  PlayerPrefs.GetInt("Score2");
             Player2Score++;
             PlayerPrefs.SetInt("Score2", Player2Score);
-            GetHighScore(int.Parse(playerNum));
+            GetHighScore(2);
 
 
         }
@@ -197,7 +197,7 @@ public class GameManagerSnow : MonoBehaviour {
             Player1Score = PlayerPrefs.GetInt("Score1");
             Player1Score++;
             PlayerPrefs.SetInt("Score1", Player1Score);
-            GetHighScore(int.Parse(playerNum));
+            GetHighScore(1);
         }
 
 
