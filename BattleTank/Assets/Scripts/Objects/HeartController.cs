@@ -72,6 +72,19 @@ public class HeartController : MonoBehaviour
 
             toRemove = true;
         }
+
+
+        if (collider.gameObject.CompareTag("PlayerBoss"))
+        {
+            PlayerControllerBoss playerBoss = collider.gameObject.GetComponent<PlayerControllerBoss>();
+
+            PlayerBossHeart(playerBoss);
+
+            audioPlayer.Play();
+            particles.Play();
+
+            toRemove = true;
+        }
     }
 
     private void PlayerHeart(PlayerController player)
@@ -90,5 +103,9 @@ public class HeartController : MonoBehaviour
         playerLava.Heal(lifeGiving);
     }
 
+    private void PlayerBossHeart(PlayerControllerBoss playerBoss)
+    {
+        playerBoss.Heal(lifeGiving);
+    }
 
 }

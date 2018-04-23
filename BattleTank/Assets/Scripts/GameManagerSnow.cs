@@ -10,7 +10,7 @@ public class GameManagerSnow : MonoBehaviour {
     private bool needsQuit = false;
     public Image darkeningImage;
     public float quitingTime = 1.0f;
-    private float restartTimer ;
+    private float restartTimer = 0f ;
     public float restartDelay = 3.0f;
 
    // public MainMenuContoller menuController;

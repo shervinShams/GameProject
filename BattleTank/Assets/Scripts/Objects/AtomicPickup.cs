@@ -63,9 +63,24 @@ public class AtomicPickup : MonoBehaviour
 
         if (collider.gameObject.CompareTag("PlayerLava"))
         {
-            PlayerControllerLava playerSnow = collider.gameObject.GetComponent<PlayerControllerLava>();
+            PlayerControllerLava playerLava = collider.gameObject.GetComponent<PlayerControllerLava>();
 
-            PlayerLavaAtomic(playerSnow);
+            PlayerLavaAtomic(playerLava);
+
+            audioPlayer.Play();
+            particles.Play();
+
+            toRemove = true;
+        }
+
+
+        if (collider.gameObject.CompareTag("PlayerBoss"))
+        {
+            PlayerControllerBoss playerBoss = collider.gameObject.GetComponent<PlayerControllerBoss>();
+            BossController playerRealBoss = collider.gameObject.GetComponent<BossController>();
+
+            PlayerBossAtomic(playerBoss);
+            BossAtomic(playerRealBoss);
 
             audioPlayer.Play();
             particles.Play();
@@ -90,5 +105,13 @@ public class AtomicPickup : MonoBehaviour
         playerLava.SetNextBullet(atomicBullet);
     }
 
+    private void PlayerBossAtomic(PlayerControllerBoss playerBoss)
+    {
+        playerBoss.SetNextBullet(atomicBullet);
+    }
 
+    private void BossAtomic(BossController playerBoss)
+    {
+        playerBoss.SetNextBullet(atomicBullet);
+    }
 }

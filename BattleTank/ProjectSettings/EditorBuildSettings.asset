@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelLava.unity
     guid: fd463300afa14854ca70e44f2c5fa8ae
+  - enabled: 1
+    path: Assets/Scenes/LevelBoss.unity
+    guid: 2e3f9ab240d6239418a0dbe0d6d62c42

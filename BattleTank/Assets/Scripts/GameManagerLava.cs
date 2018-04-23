@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManagerLava : MonoBehaviour {
 
     public GameObject mainMenu;
+    public Image darkeningImage;
+    public float quitingTime = 1.0f;
+    private float restartTimer = 0f;
+    public float restartDelay = 3.0f;
 
     public GameObject player1;
     public GameObject player2;
@@ -28,6 +33,12 @@ public class GameManagerLava : MonoBehaviour {
     private BoardManager boardScript;
     private float heartTimer = 0.0f;
     private float nuclearTimer = 0.0f;
+    private bool needsQuit = false;
+    private float timer = 0.0f;
+
+
+    public delegate void QuitAction();
+    QuitAction onQuitAction;
 
     // private PlayerPrefs score1;
 
@@ -70,6 +81,8 @@ public class GameManagerLava : MonoBehaviour {
                 StartGame();
             }
         }
+
+        restartTimer += Time.deltaTime;
     }
 
     void FixedUpdate()
@@ -89,6 +102,21 @@ public class GameManagerLava : MonoBehaviour {
             {
                 boardScript.AddRandomNuclearPickup();
                 nuclearTimer = 0.0f;
+            }
+        }
+
+        if (needsQuit)
+        {
+            timer += Time.deltaTime;
+            //if (backgroundMusic)
+            //    backgroundMusic.volume = Mathf.Lerp(backgroundMusic.volume, 0.0f, quitingTime * Time.deltaTime);
+
+            if (darkeningImage)
+                darkeningImage.color = Color.Lerp(darkeningImage.color, Color.black, quitingTime * Time.deltaTime);
+
+            if (timer >= quitingTime)
+            {
+                onQuitAction();
             }
         }
     }
@@ -173,7 +201,27 @@ public class GameManagerLava : MonoBehaviour {
 
         //winText.text = "Player " + playerNum + " Wins!!!!!\nScore " + PlayerPrefs.GetInt("Score1") + " : " + PlayerPrefs.GetInt("Score2") + "\nPress enter to\ncontinue";
         //winText.enabled = true;
+
+
+
+        if (restartTimer >= restartDelay)
+        {
+            BeginQuitingWithAction(LoadBossScene);
+        }
+
     }
+
+
+    void BeginQuitingWithAction(QuitAction action)
+    {
+        onQuitAction = action;
+        if (darkeningImage)
+            darkeningImage.gameObject.SetActive(true);
+        needsQuit = true;
+        //LoadSnowScene();
+    }
+
+
 
     public int GetScoreForPlayer(int playerNum)
     {
@@ -191,7 +239,7 @@ public class GameManagerLava : MonoBehaviour {
         int score1 = PlayerPrefs.GetInt("Score1");
         int score2 = PlayerPrefs.GetInt("Score2");
 
-        if (score1 > score2 && score1 > 3)
+        if (score1 > score2 && score1 >= 3)
         {
 
             gameOverTxt.text = "PLAYER " + playerNum + "  \nwill Battle with the \nBOSS!!!";
@@ -203,7 +251,7 @@ public class GameManagerLava : MonoBehaviour {
             winText.enabled = false;
         }
 
-        else if (score2 > score1 && score2 > 3)
+        else if (score2 > score1 && score2 >= 3)
         {
 
 
@@ -227,6 +275,12 @@ public class GameManagerLava : MonoBehaviour {
             //gameOverTxt.enabled = true;
 
         }
+    }
+
+
+    void LoadBossScene()
+    {
+        SceneManager.LoadScene("LevelBoss");
     }
 
 }

@@ -1586,10 +1586,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 679646199}
   m_HandleRect: {fileID: 414312588}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 5
+  m_MinValue: -50
+  m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: -10
+  m_Value: -23.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2311,10 +2311,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1744953280}
   m_HandleRect: {fileID: 158125865}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 5
+  m_MinValue: -50
+  m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: -10
+  m_Value: -23.9
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2646,7 +2646,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2705,7 +2705,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 1880152887341150, guid: f45e26727ac162a4f8628601635538eb,
+  m_FirstSelected: {fileID: 1688566912701680, guid: 1d16f1f8fa2948e4cbf1726260a51205,
     type: 2}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5

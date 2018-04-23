@@ -11,6 +11,7 @@ TagManager:
   - PlayerSnow
   - PlayerLava
   - Lava
+  - PlayerBoss
   layers:
   - Default
   - TransparentFX

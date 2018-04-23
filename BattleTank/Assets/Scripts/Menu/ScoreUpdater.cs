@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ScoreUpdater : MonoBehaviour
 {
-    public GameObject score;
+   // public GameObject score;
     public GameManager gameManager;
     public int playerNumber = 1;
     //PlayerPrefs playerPrefs;

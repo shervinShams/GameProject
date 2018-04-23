@@ -198,7 +198,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1270,10 +1270,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 2068500805}
   m_HandleRect: {fileID: 1257098178}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -50
   m_MaxValue: 5
   m_WholeNumbers: 0
-  m_Value: -10
+  m_Value: -19
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2112,6 +2112,11 @@ Prefab:
       propertyPath: gameOverTxt
       value: 
       objectReference: {fileID: 383039449}
+    - target: {fileID: 114862022169520138, guid: 7eb13825805d39f43b56cf7a2597a243,
+        type: 2}
+      propertyPath: darkeningImage
+      value: 
+      objectReference: {fileID: 72059909}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7eb13825805d39f43b56cf7a2597a243, type: 2}
   m_IsPrefabParent: 0
@@ -2572,10 +2577,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1736338059}
   m_HandleRect: {fileID: 592159681}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 5
+  m_MinValue: -50
+  m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: -10
+  m_Value: -20
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:

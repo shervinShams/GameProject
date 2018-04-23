@@ -4,6 +4,7 @@ Assets/Scenes/MainMenu.unity
 Assets/Scenes/SIngleGame.unity
 Assets/Scenes/LevelSnow.unity
 Assets/Scenes/LevelLava.unity
+Assets/Scenes/LevelBoss.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 dbc29a6f2739d277c10da432d73adb6d UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -17,9 +18,9 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-c2f3590a9c14509470e3aeb29b196f42 Assembly-CSharp.dll:.ScoreUpdater
+4b3444f2f16ff30757e7e8854509242f Assembly-CSharp.dll:.ScoreUpdater
 317c9eea8cd6b1811157490c0815e447 Assembly-CSharp.dll:.BoardManager
-c024d2ae112ba1fc441b9c069e25d062 Assembly-CSharp.dll:.GameManagerLava
+69e0505b3a92d292a0baed82a9539748 Assembly-CSharp.dll:.GameManagerLava
 2c3f8a10aa92d56cbd543e5e99e174f6 Assembly-CSharp.dll:.PlayerReload
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -125,10 +126,12 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 695d6d800957c1b224595da14099423b Assembly-CSharp.dll:.ScoreUpdaterLava
 b24f5a077bdcdbaef963e38666017f3e Assembly-CSharp.dll:.PlayerControllerLava
 39e444af0582d646d6549ac38f36b7be Assembly-CSharp.dll:.AtomicPickup
+7e05fd1947192c7c0ffce491f5fb3349 Assembly-CSharp.dll:.GameManagerBoss
 227c9b88adcffdc44f95004f02533561 Assembly-CSharp.dll:.PlayeContorollerSnow
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 9d2cf094fb160934cc9b9be9dc3b6aca Assembly-CSharp.dll:.SettingsController
+3469d5ff9c7f9a7112e2ae63767a6229 Assembly-CSharp.dll:.BossController
 d274f597fa08b779b557a87e705181bd Assembly-CSharp.dll:.HideableSprite
 5f95daa7996f5cefee31c216fe1eb433 Assembly-CSharp.dll:.BulletController
 6a2fac2a7450ce5d139152cf743b9e69 Assembly-CSharp.dll:.HeartController
@@ -146,6 +149,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 3f32f08a64daf40b09ed864d96fe3840 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
+958ae2b179d97ae84110ea45a5ff5270 Assembly-CSharp.dll:.PlayerControllerBoss
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 96d0fbde9fd209878a0a291f82c9bcdd UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
@@ -164,3 +168,4 @@ a60876d272cb816316bb3b40f83ca17a Assembly-CSharp.dll:.GameManager
 ae8f0d6b7445e284a674a2e5d6d3c114 Assembly-CSharp.dll:.MainMenuContoller
 178b889f5d3197e52cac3d1c9a66a318 Assembly-CSharp.dll:.ScoreUpdateSnow
 2e0df071e1818b153b8e47b62db975d4 Assembly-CSharp.dll:.PlayerController
+fc461e256fe6c5b753b20d01f61dc600 Assembly-CSharp.dll:.ScoreUpdaterBoss

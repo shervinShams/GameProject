@@ -69,7 +69,7 @@ Transform:
   m_GameObject: {fileID: 1818354703788952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.862707, y: 0.8219675, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 4699308163343444}
   m_Father: {fileID: 0}
@@ -188,7 +188,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -212,10 +212,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3a14f8a75f8414d821bd832ad12817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletSpeed: 300
+  BulletSpeed: 500
   AccelerationTime: 1
   Damage: 10
-  WallDamage: 1
+  WallDamage: 2
   blastParticles: {fileID: 198389916342193350}
 --- !u!198 &198389916342193350
 ParticleSystem:

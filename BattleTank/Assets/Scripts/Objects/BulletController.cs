@@ -82,6 +82,11 @@ public class BulletController : MonoBehaviour
         {
             collision.gameObject.SendMessage("TakeDamage", Damage);
         }
+
+        if (collision.gameObject.CompareTag("PlayerBoss"))
+        {
+            collision.gameObject.SendMessage("TakeDamage", Damage);
+        }
         if (spriteRenderer)
         {
             spriteRenderer.sprite = null;
