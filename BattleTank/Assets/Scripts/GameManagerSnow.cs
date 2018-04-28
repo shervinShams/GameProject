@@ -10,18 +10,12 @@ public class GameManagerSnow : MonoBehaviour {
     private bool needsQuit = false;
     public Image darkeningImage;
     public float quitingTime = 1.0f;
-    private float restartTimer = 0f ;
-    public float restartDelay = 3.0f;
-
-   // public MainMenuContoller menuController;
 
     public GameObject player1;
     public GameObject player2;
-
-    //public Text restartButtonText;
-    //public GameObject resumeGameButton;
+  
     public Text winText;
-    public Text gameOverTxt;
+    public Text countDown;
 
     public bool isGameBegan = true;
     public bool isPaused = false;
@@ -44,13 +38,13 @@ public class GameManagerSnow : MonoBehaviour {
     QuitAction onQuitAction;
 
 
-   // private PlayerPrefs score1;
 
     void Awake()
     {
         boardScript = GetComponent<BoardManager>();
+        
         winText.enabled = false;
-        gameOverTxt.enabled = false;
+        countDown.enabled = false;
         StartGame();
     }
 
@@ -85,8 +79,6 @@ public class GameManagerSnow : MonoBehaviour {
                 StartGame();
             }
         }
-
-        restartTimer += Time.deltaTime;
     }
 
     void FixedUpdate()
@@ -141,6 +133,7 @@ public class GameManagerSnow : MonoBehaviour {
     public static bool isGamePaused()
     {
         GameObject gManager = GameObject.Find("GameManagerSnow");
+       
         return gManager.GetComponent<GameManagerSnow>().isPaused ;
     }
 
@@ -149,8 +142,8 @@ public class GameManagerSnow : MonoBehaviour {
         winText.text = "";
         winText.enabled = false;
 
-        gameOverTxt.text = "";
-        gameOverTxt.enabled = false;
+        countDown.text = "";
+        countDown.enabled = false;
 
         boardScript.SetupScene();
         ResetPlayers();
@@ -186,9 +179,6 @@ public class GameManagerSnow : MonoBehaviour {
             Player2Score =  PlayerPrefs.GetInt("Score2");
             Player2Score++;
             PlayerPrefs.SetInt("Score2", Player2Score);
-            GetHighScore(2);
-
-
         }
         else
         {
@@ -197,20 +187,13 @@ public class GameManagerSnow : MonoBehaviour {
             Player1Score = PlayerPrefs.GetInt("Score1");
             Player1Score++;
             PlayerPrefs.SetInt("Score1", Player1Score);
-            GetHighScore(1);
         }
+        GameManagerSnow gManager = GetComponent<GameManagerSnow>();
+        gManager.isPaused = true;
 
+        MyWinText(playerNum);
 
-         if (restartTimer >= restartDelay)
-        {
-            BeginQuitingWithAction(LoadLavaScene);
-        }
-
-        //gameOverTxt.text = "PLAYER " + playerNum + "IS THE WINNER !!!!!!";
-        //gameOverTxt.enabled = true;
-
-        //winText.text = "Player " + playerNum + " Wins!!!!!\nScore " + PlayerPrefs.GetInt("Score1") + " : " + PlayerPrefs.GetInt("Score2") + "\nPress enter to\ncontinue";
-        //winText.enabled = true;
+        StartCoroutine(UiHandler());
     }
 
 
@@ -220,61 +203,37 @@ public class GameManagerSnow : MonoBehaviour {
         if (darkeningImage)
             darkeningImage.gameObject.SetActive(true);
         needsQuit = true;
-        //LoadSnowScene();
     }
 
-    public int GetScoreForPlayer(int playerNum)
+    public IEnumerator UiHandler()
     {
-        if (playerNum == 1)
-            return Player1Score;
-        if (playerNum == 2)
-            return Player2Score;
 
-        return 0;
+        yield return new WaitForSeconds(3.5f);
+        winText.enabled = false;
+        countDown.text = "Next Level\n 3";
+        countDown.enabled = true;
+        yield return new WaitForSeconds(1);
+        countDown.text = "Next Level\n 2";
+        countDown.enabled = true;
+        yield return new WaitForSeconds(1);
+        countDown.text = "Next Level\n 1";
+        countDown.enabled = true;
+        yield return new WaitForSeconds(1);
+        countDown.text = "Go";
+        countDown.enabled = true;
+        yield return new WaitForSeconds(0.2f);
+        BeginQuitingWithAction(LoadLavaScene);
+
     }
 
-    public void GetHighScore(int playerNum)
+    public void MyWinText(string playerNumber)
     {
-
-        int score1 = PlayerPrefs.GetInt("Score1");
-        int score2 = PlayerPrefs.GetInt("Score2");
-
-        if (score1 > score2 && score1 > 3)
-        {
-
-            gameOverTxt.text = "PLAYER " + playerNum + "  will play with the boss!!!";
-            //winText.enabled = false;
-
-            // winText.text = gameOverTxt.text;
-            gameOverTxt.enabled = true;
-
-            winText.enabled = false;
-        }
-
-        else if (score2 > score1 && score2 > 3)
-        {
+        isPaused = true;
+        winText.text = "WINNER\nPLAYER " + playerNumber + " WIN\nScore " + PlayerPrefs.GetInt("Score1") + " : " + PlayerPrefs.GetInt("Score2");
+        winText.enabled = true;
 
 
-            Debug.Log(score1);
-            Debug.Log(score2);
-            gameOverTxt.text = "PLAYER " + playerNum + "  will play with the boss!!!";
-            //winText.enabled = false;
 
-            // winText.text = gameOverTxt.text;
-            gameOverTxt.enabled = true;
-
-            winText.enabled = false;
-        }
-
-        
-
-        else
-        {
-            winText.text = "Player " + playerNum + " Wins!!!!!\nScore " + PlayerPrefs.GetInt("Score1") + " : " + PlayerPrefs.GetInt("Score2") + "\nPress enter to\ncontinue";
-            winText.enabled = true;
-            //gameOverTxt.enabled = true;
-
-        }
     }
 
     void LoadLavaScene()

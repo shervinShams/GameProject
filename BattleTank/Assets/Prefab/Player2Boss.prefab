@@ -620,15 +620,13 @@ MonoBehaviour:
   patrolSpeed: 4
   chaseSpeed: -3
   target: {fileID: 0}
-  chaseRange: 10
-  attackRange: 8
-  attackDelay: 4
-  shotForce: 250
+  chaseRange: 12
+  attackRange: 11
   playerHealthObject: {fileID: 1681689499770702}
   playerReloadObject: {fileID: 1257425154970804}
-  ReloadSpeed: 4
-  ShootingKick: 40
-  damage: 5
+  ReloadSpeed: 2
+  ShootingKick: 70
+  damage: 20
   Bullet: {fileID: 1818354703788952, guid: b1d1003113fd0904c90c21bc021e7175, type: 2}
   trackParticles: {fileID: 198574130131879530}
   burnParticles: {fileID: 198423943905903896}
@@ -4216,7 +4214,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 52127875
+  randomSeed: -890466935
   InitialModule:
     serializedVersion: 3
     enabled: 1

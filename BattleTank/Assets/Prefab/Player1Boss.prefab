@@ -202,13 +202,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1290817469821776}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4235410811954004}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4176566006196882
 Transform:
   m_ObjectHideFlags: 1
@@ -583,15 +583,13 @@ MonoBehaviour:
   patrolSpeed: 4
   chaseSpeed: -3
   target: {fileID: 0}
-  chaseRange: 10
-  attackRange: 8
-  attackDelay: 1
-  shotForce: 250
+  chaseRange: 12
+  attackRange: 11
   playerHealthObject: {fileID: 1665249430646456}
   playerReloadObject: {fileID: 1093501289369240}
-  ReloadSpeed: 4
-  ShootingKick: 40
-  damage: 5
+  ReloadSpeed: 2
+  ShootingKick: 70
+  damage: 20
   Bullet: {fileID: 1818354703788952, guid: b1d1003113fd0904c90c21bc021e7175, type: 2}
   trackParticles: {fileID: 198049135052454104}
   burnParticles: {fileID: 198601531830071188}
@@ -720,7 +718,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1125798287
+  randomSeed: -1744379017
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7577,7 +7575,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1739165176
+  randomSeed: -639391763
   InitialModule:
     serializedVersion: 3
     enabled: 1

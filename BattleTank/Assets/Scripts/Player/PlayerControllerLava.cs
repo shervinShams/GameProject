@@ -149,11 +149,25 @@ public class PlayerControllerLava : MonoBehaviour {
 
     public void TakeDamage(int damage)
     {
+        int current = playerHealth.curHealth;
+        Debug.Log(current);
         playerHealth.AdjustCurrentHealth(-damage);
-        if (playerHealth.curHealth <= 20 && !burnParticles.isPlaying)
+        current -= damage;
+
+        if (current >= 30 && burnParticles.isPlaying)
         {
+
+            // playerHealth.curHealth = current;
+            burnParticles.Stop();
+
+        }
+
+        if (current <= 30 && !burnParticles.isPlaying)
+        {
+            //playerHealth.curHealth = current;
             burnParticles.Play();
         }
+
 
         if (playerHealth.curHealth == 0 && !GameManagerLava.isGamePaused())
         {
@@ -217,36 +231,36 @@ public class PlayerControllerLava : MonoBehaviour {
         }
     }
 
-/*
- * 
- * Collider delegates
- *
- */
+    /*
+     * 
+     * Collider delegates
+     *
+     */
 
-void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.gameObject.CompareTag("Cover"))
-        {
-            playerHealth.Hide();
-            playerReload.Hide();
-        }
-    }
+    //void OnTriggerEnter2D(Collider2D collider)
+    //{
+    //    if (collider.gameObject.CompareTag("Cover"))
+    //    {
+    //        playerHealth.Hide();
+    //        playerReload.Hide();
+    //    }
+    //}
 
-    void OnTriggerStay2D(Collider2D collider)
-    {
-        if (collider.gameObject.CompareTag("Cover"))
-        {
-            playerHealth.Hide();
-            playerReload.Hide();
-        } 
-    }
+    //void OnTriggerStay2D(Collider2D collider)
+    //{
+    //    if (collider.gameObject.CompareTag("Cover"))
+    //    {
+    //        playerHealth.Hide();
+    //        playerReload.Hide();
+    //    }
+    //}
 
-    void OnTriggerExit2D(Collider2D collider)
-    {
-        if (collider.gameObject.CompareTag("Cover"))
-        {
-            playerHealth.Show();
-            playerReload.Show();
-        }
-    }
+    //void OnTriggerExit2D(Collider2D collider)
+    //{
+    //    if (collider.gameObject.CompareTag("Cover"))
+    //    {
+    //        playerHealth.Show();
+    //        playerReload.Show();
+    //    }
+    //}
 }

@@ -348,7 +348,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -267}
+  m_AnchoredPosition: {x: 0, y: -361}
   m_SizeDelta: {x: 220, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &53186751
@@ -554,7 +554,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 5}
-  m_SizeDelta: {x: 0, y: 46.34}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &56979062
 MonoBehaviour:
@@ -576,8 +576,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ea557acb7dac6aa4284733f03686c957, type: 3}
-    m_FontSize: 10
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -884,7 +884,7 @@ MonoBehaviour:
   m_MinValue: -50
   m_MaxValue: 5
   m_WholeNumbers: 0
-  m_Value: -18.6
+  m_Value: -23
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1547,10 +1547,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243373578873220358, guid: 06d8b7a6baa1c8148b94f48c12865644,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 8e73f721679b4a04eaab44910e3462db, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 23ea7ca0d001fde4ebd73b312788a151, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 0.3
+  m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -2109,8 +2109,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.6, y: 13.9}
-  m_SizeDelta: {x: 1385.7, y: 605.7}
+  m_AnchoredPosition: {x: 9.1, y: -75.4}
+  m_SizeDelta: {x: 1400, y: 784.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1000951569
 MonoBehaviour:
@@ -2124,7 +2124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.83823526, b: 0.83823526, a: 1}
+  m_Color: {r: 1, g: 0.875, b: 0.875, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2132,8 +2132,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 6bb7719501cab3c48bb23de34df6c5ca, type: 3}
-    m_FontSize: 38
+    m_Font: {fileID: 12800000, guid: ed46ecaf17ccf4244bac102be39cd685, type: 3}
+    m_FontSize: 37
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2146,9 +2146,10 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "\nWelcome to Battle Tank !!!!!     We hope you enjoy playing this game.
     the game has many features like health pickup, atomic pickup, hiding your tank,
-    and many more !!!\nThis is a two player game consists of 3 levels\n\t\n Levels
-    :  1.Brick Walls\n\t\t   2. Snow\n\t\t\t\t\t  3. Lava    boss\n\n\t\t  Credit
-    goes to Shervin, Joban, Tharmitha and Ghafar\n  Winter 2018"
+    lava trap, and many more !!!\nThis is a two player game consists of 3 levels and
+    the winner will battle the BOSS !!!\n\t\nLevels :  1. Grass\n\t\t          2.
+    Snow\n\t\t\t        3. Lava   \n             4. boss\nCredit goes to Shervin,
+    Joban, Tharmitha and Ghafar"
 --- !u!222 &1000951570
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2882,7 +2883,7 @@ MonoBehaviour:
   m_MinValue: -50
   m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: -20.8
+  m_Value: -18.1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:

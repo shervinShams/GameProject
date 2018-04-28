@@ -61,7 +61,7 @@ public class PlayeContorollerSnow : MonoBehaviour {
     {
 
         if (GameManagerSnow.isGamePaused())
-            return;
+            return ;
 
         float vertical = Input.GetAxisRaw(vAxisName);
         float horizontal = Input.GetAxisRaw(hAxisName);
@@ -147,9 +147,22 @@ public class PlayeContorollerSnow : MonoBehaviour {
 
     public void TakeDamage(int damage)
     {
+        int current = playerHealth.curHealth;
+        Debug.Log(current);
         playerHealth.AdjustCurrentHealth(-damage);
-        if (playerHealth.curHealth <= 20 && !burnParticles.isPlaying)
+        current -= damage;
+
+        if (current >= 30 && burnParticles.isPlaying)
         {
+
+            // playerHealth.curHealth = current;
+            burnParticles.Stop();
+
+        }
+
+        if (current <= 20 && !burnParticles.isPlaying)
+        {
+            //playerHealth.curHealth = current;
             burnParticles.Play();
         }
 

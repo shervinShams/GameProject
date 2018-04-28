@@ -8,29 +8,16 @@ using System;
 public class GameManager : MonoBehaviour
 {
     private bool needsQuit = false;
-    public Image darkeningImage;
+   
     public float quitingTime = 1.0f;
     private float restartTimer = 0.0f;
-    public float restartDelay = 3.0f;
-
-    //public PlayerPrefs playerPrefs;
-
-
-    //public MainMenuContoller menuController;
-
-    public delegate void QuitAction();
-    QuitAction onQuitAction;
 
     public GameObject mainMenu;
-    //public PlayerHealth playerHealth1;
-
+    public Image darkeningImage;
     public GameObject player1;
     public GameObject player2;
-    //public ScoreUpdater score;
-
-    //public Text restartButtonText;
-    //public GameObject resumeGameButton;
     public Text winText;
+    public Text countDown;
 
     public bool isGameBegan = true;
     public bool isPaused = false;
@@ -47,19 +34,20 @@ public class GameManager : MonoBehaviour
     private float heartTimer = 0.0f;
     private float nuclearTimer = 0.0f;
 
+
+    public delegate void QuitAction();
+    QuitAction onQuitAction;
+
+
     void Awake()
     {
-        //playerPrefs = GetComponent<PlayerPrefs>();
-        //playerHealth1 = GetComponent<PlayerHealth>();
         boardScript = GetComponent<BoardManager>();
         winText.enabled = false;
+        countDown.enabled = false;
         StartGame();
         PlayerPrefs.DeleteKey("Score1");
         PlayerPrefs.DeleteKey("Score2");
-        //DontDestroyOnLoad(playerHealth1);
-        // DontDestroyOnLoad(playerPrefs);
-        //DontDestroyOnLoad(Player1Score);
-        //playerPrefs = GetComponent<PlayerPrefs>();
+        
     }
 
   
@@ -118,9 +106,7 @@ public class GameManager : MonoBehaviour
                 nuclearTimer = 0.0f;
             }
         }
-        //timer += Time.deltaTime;
-       // darkeningImage.color = Color.Lerp(darkeningImage.color, Color.black, quitingTime * Time.deltaTime);
-
+  
         if (needsQuit)
         {
             timer += Time.deltaTime;
@@ -128,14 +114,20 @@ public class GameManager : MonoBehaviour
             //    backgroundMusic.volume = Mathf.Lerp(backgroundMusic.volume, 0.0f, quitingTime * Time.deltaTime);
 
             if (darkeningImage)
+            {
+
+                
                 darkeningImage.color = Color.Lerp(darkeningImage.color, Color.black, quitingTime * Time.deltaTime);
+            }
 
             if (timer >= quitingTime)
             {
                 onQuitAction();
+                
             }
         }
 
+        
     }
 
     void ResetPlayers()
@@ -154,13 +146,17 @@ public class GameManager : MonoBehaviour
     public static bool isGamePaused()
     {
             GameObject gManager = GameObject.Find("GameManager");
-            return gManager.GetComponent<GameManager>().isPaused = false;
+            
+        return gManager.GetComponent<GameManager>().isPaused ;
+        
     }
 
     public void StartGame()
     {
         winText.text = "";
         winText.enabled = false;
+        countDown.text = "";
+        countDown.enabled = false;
         boardScript.SetupScene();
         ResetPlayers();
         isGameBegan = true;
@@ -206,67 +202,72 @@ public class GameManager : MonoBehaviour
             
         }
 
-        winText.text = "Player " + playerNum + " Wins!!!!!\nScore " + PlayerPrefs.GetInt("Score1") + " : " + PlayerPrefs.GetInt("Score2") + "\nPress enter to\ncontinue";
-        winText.enabled = true;
+        GameManager gManager = GetComponent<GameManager>();
+        gManager.isPaused = true;
 
-        //if (isPaused && !isGameBegan)
-        //{
-        //    Invoke("LoadSnowScene", 5);
-        //    transform.position += new Vector3(0, 1, 2);
-        //    Invoke("delayedRotation", 4f);
-        //    //ResumeGame();
-        //    GetScoreForPlayer(1);
+        MyWinText(playerNum);
 
-        //}
-
-
-
-
-        // .. if it reaches the restart delay...
-        if (restartTimer >= restartDelay)
-        {
-            BeginQuitingWithAction(LoadSnowScene);
-        }
-
-
-
-        // Invoke("BeginQuitingWithAction", 5);
-
+        StartCoroutine( UiHandler());
     }
 
     void BeginQuitingWithAction(QuitAction action)
     {
         onQuitAction = action;
         if (darkeningImage)
+        {
             darkeningImage.gameObject.SetActive(true);
-        needsQuit = true;
-        //LoadSnowScene();
-    }
+        }
+           needsQuit = true;
 
-    void delayedRotation()
-    {
-        transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime);
-        darkeningImage.gameObject.SetActive(true);
     }
-
 
     public int GetScoreForPlayer(int playerNum)
     {
         if (playerNum == 1)
         {
             return Player1Score;
-            
-          
         }
         if (playerNum == 2)
+        {
             return Player2Score;
+        }
 
         return 0;
     }
 
     void LoadSnowScene()
     {
+        
         SceneManager.LoadScene("LevelSnow");
+    }
+
+
+    public IEnumerator UiHandler()
+    {
+
+        yield return new WaitForSeconds(3.5f);
+        winText.enabled = false;
+        countDown.text = "Next Level\n 3";
+        countDown.enabled = true;
+        yield return new WaitForSeconds(1);
+        countDown.text = "Next Level\n 2";
+        countDown.enabled = true;
+        yield return new WaitForSeconds(1);
+        countDown.text = "Next Level\n 1";
+        countDown.enabled = true;
+        yield return new WaitForSeconds(1);
+        countDown.text = "Go";
+        countDown.enabled = true;
+        yield return new WaitForSeconds(0.2f);
+        BeginQuitingWithAction(LoadSnowScene);
+
+    }
+
+    public void MyWinText(string playerNumber)
+    {
+        isPaused = true;
+        winText.text = "WINNER\nPLAYER " + playerNumber + " WIN\nScore " + PlayerPrefs.GetInt("Score1") + " : " + PlayerPrefs.GetInt("Score2");
+        winText.enabled = true;
     }
 
 }

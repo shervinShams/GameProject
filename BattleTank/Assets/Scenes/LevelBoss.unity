@@ -146,7 +146,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: 0, y: 100}
+  m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &62511963
 MonoBehaviour:
@@ -168,9 +168,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ea557acb7dac6aa4284733f03686c957, type: 3}
-    m_FontSize: 20
-    m_FontStyle: 0
+    m_Font: {fileID: 12800000, guid: 5967f26defdf22d41b83afcee30332ff, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
@@ -415,8 +415,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchoredPosition: {x: -10, y: 100}
+  m_SizeDelta: {x: 20, y: 300}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &96389429
 MonoBehaviour:
@@ -438,9 +438,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ea557acb7dac6aa4284733f03686c957, type: 3}
-    m_FontSize: 20
-    m_FontStyle: 0
+    m_Font: {fileID: 12800000, guid: 5967f26defdf22d41b83afcee30332ff, type: 3}
+    m_FontSize: 28
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
@@ -530,21 +530,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114860639994324518, guid: 4f99bec8f6e016849b51e78f891bf2ce,
-        type: 2}
-      propertyPath: duplicator
-      value: 
-      objectReference: {fileID: 2111910923}
-    - target: {fileID: 114006382623841902, guid: 4f99bec8f6e016849b51e78f891bf2ce,
-        type: 2}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 240161532}
-    - target: {fileID: 114233848820917524, guid: 4f99bec8f6e016849b51e78f891bf2ce,
-        type: 2}
-      propertyPath: duplicator
-      value: 
-      objectReference: {fileID: 813781104}
     - target: {fileID: 114369866320111030, guid: 4f99bec8f6e016849b51e78f891bf2ce,
         type: 2}
       propertyPath: target
@@ -555,6 +540,21 @@ Prefab:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 240161532}
+    - target: {fileID: 114233848820917524, guid: 4f99bec8f6e016849b51e78f891bf2ce,
+        type: 2}
+      propertyPath: duplicator
+      value: 
+      objectReference: {fileID: 813781104}
+    - target: {fileID: 114006382623841902, guid: 4f99bec8f6e016849b51e78f891bf2ce,
+        type: 2}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 240161532}
+    - target: {fileID: 114860639994324518, guid: 4f99bec8f6e016849b51e78f891bf2ce,
+        type: 2}
+      propertyPath: duplicator
+      value: 
+      objectReference: {fileID: 2111910923}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f99bec8f6e016849b51e78f891bf2ce, type: 2}
   m_IsPrefabParent: 0
@@ -810,7 +810,7 @@ Prefab:
       objectReference: {fileID: 1770314147}
     - target: {fileID: 114368585621738630, guid: 24f5206886c118848b62bf2e38ddb0c6,
         type: 2}
-      propertyPath: gameOverTxt
+      propertyPath: countDown
       value: 
       objectReference: {fileID: 1063385330}
     m_RemovedComponents: []
@@ -1037,7 +1037,7 @@ MonoBehaviour:
   m_MinValue: -50
   m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: -22
+  m_Value: -23.7
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1706,7 +1706,7 @@ MonoBehaviour:
   m_MinValue: -50
   m_MaxValue: 5
   m_WholeNumbers: 0
-  m_Value: -24.8
+  m_Value: -25.1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1791,7 +1791,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50a91657c3df5d45b07fbd381ce5958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
   playerNumber: 1
 --- !u!114 &599389796
 MonoBehaviour:
@@ -2416,7 +2415,7 @@ GameObject:
   - component: {fileID: 1063385331}
   - component: {fileID: 1063385330}
   m_Layer: 5
-  m_Name: GameOver
+  m_Name: countDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2438,7 +2437,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1380, y: 250}
+  m_SizeDelta: {x: 1400, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1063385330
 MonoBehaviour:
@@ -2452,7 +2451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2460,18 +2459,18 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ea557acb7dac6aa4284733f03686c957, type: 3}
-    m_FontSize: 40
+    m_Font: {fileID: 12800000, guid: b04b85c48fdcb304a858b78951d5a0fd, type: 3}
+    m_FontSize: 120
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 40
+    m_MinSize: 1
+    m_MaxSize: 120
     m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 2
+    m_LineSpacing: 1
   m_Text: 
 --- !u!222 &1063385331
 CanvasRenderer:
@@ -3300,7 +3299,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1380, y: 200}
+  m_SizeDelta: {x: 1400, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1770314147
 MonoBehaviour:
@@ -3322,18 +3321,18 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ea557acb7dac6aa4284733f03686c957, type: 3}
-    m_FontSize: 40
+    m_Font: {fileID: 12800000, guid: b04b85c48fdcb304a858b78951d5a0fd, type: 3}
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
-    m_MaxSize: 50
+    m_MinSize: 1
+    m_MaxSize: 120
     m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 2
+    m_LineSpacing: 1
   m_Text: 
 --- !u!222 &1770314148
 CanvasRenderer:
@@ -4054,21 +4053,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114009751250424522, guid: aa70fcaa140adcf4c8a8375cb096c7b5,
-        type: 2}
-      propertyPath: duplicator
-      value: 
-      objectReference: {fileID: 306779256}
-    - target: {fileID: 114394940330792076, guid: aa70fcaa140adcf4c8a8375cb096c7b5,
-        type: 2}
-      propertyPath: duplicator
-      value: 
-      objectReference: {fileID: 1309538258}
-    - target: {fileID: 114865457017702670, guid: aa70fcaa140adcf4c8a8375cb096c7b5,
-        type: 2}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 240161532}
     - target: {fileID: 114541810181376068, guid: aa70fcaa140adcf4c8a8375cb096c7b5,
         type: 2}
       propertyPath: target
@@ -4079,6 +4063,21 @@ Prefab:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 240161532}
+    - target: {fileID: 114865457017702670, guid: aa70fcaa140adcf4c8a8375cb096c7b5,
+        type: 2}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 240161532}
+    - target: {fileID: 114394940330792076, guid: aa70fcaa140adcf4c8a8375cb096c7b5,
+        type: 2}
+      propertyPath: duplicator
+      value: 
+      objectReference: {fileID: 1309538258}
+    - target: {fileID: 114009751250424522, guid: aa70fcaa140adcf4c8a8375cb096c7b5,
+        type: 2}
+      propertyPath: duplicator
+      value: 
+      objectReference: {fileID: 306779256}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa70fcaa140adcf4c8a8375cb096c7b5, type: 2}
   m_IsPrefabParent: 0
@@ -4438,7 +4437,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50a91657c3df5d45b07fbd381ce5958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
   playerNumber: 2
 --- !u!114 &2126340662
 MonoBehaviour:

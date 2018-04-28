@@ -48,6 +48,7 @@ public class BulletController : MonoBehaviour
     {
         if (GameManager.isGamePaused())
             return;
+       
 
         if (blasting)
         {
@@ -62,17 +63,21 @@ public class BulletController : MonoBehaviour
     {
         audioPlayer.Play();
         if (boxCollider)
+
         {
             boxCollider.enabled = false;
         }
+
         if (collision.gameObject.CompareTag("Destructible"))
         {
             collision.gameObject.SendMessage("TakeDamage", WallDamage);
         }
+
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.SendMessage("TakeDamage", Damage);
         }
+
         if (collision.gameObject.CompareTag("PlayerSnow"))
         {
             collision.gameObject.SendMessage("TakeDamage", Damage);
@@ -85,8 +90,9 @@ public class BulletController : MonoBehaviour
 
         if (collision.gameObject.CompareTag("PlayerBoss"))
         {
-            collision.gameObject.SendMessage("TakeDamage", Damage);
+            collision.gameObject.SendMessage("TakeDamage", 5);
         }
+
         if (spriteRenderer)
         {
             spriteRenderer.sprite = null;

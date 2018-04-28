@@ -283,13 +283,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1679919225605166}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4554326111358926}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!50 &50917728360007788
 Rigidbody2D:
   serializedVersion: 4
@@ -468,7 +468,7 @@ MonoBehaviour:
   FrictionScale: 100
   ReloadSpeed: 0.7
   ShootingKick: 70
-  Damage: 10
+  damage: 10
   Bullet: {fileID: 1818354703788952, guid: b1d1003113fd0904c90c21bc021e7175, type: 2}
   trackParticles: {fileID: 198798374066698690}
   burnParticles: {fileID: 198020861684142260}
@@ -629,7 +629,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1635988125
+  randomSeed: 1295287844
   InitialModule:
     serializedVersion: 3
     enabled: 1

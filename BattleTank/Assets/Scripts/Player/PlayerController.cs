@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public GameObject playerHealthObject;
     public GameObject playerReloadObject;
 
+    public int currentLife = 100;
+
     public float Velocity = 7.0f;
     public float MaximalSpeed = 40.0f;
     public float RotationSpeed = 2.0f;
@@ -48,7 +50,9 @@ public class PlayerController : MonoBehaviour
         playerReload.reloadSpeed = ReloadSpeed;
         animator = GetComponent<Animator>();
         soundManager = GetComponentInChildren<PlayerSoundManager>();
+       // burnParticles = GetComponentInChildren<ParticleSystem>();
         nextBullet = Bullet;
+        
 
         if (SecondPlayer)
         {
@@ -83,6 +87,7 @@ public class PlayerController : MonoBehaviour
         }
 
         SetupParticles(vertical);
+       
 
         Vector2 velocityVector = rb.velocity.normalized;
         float dot = Vector2.Dot(velocityVector, localUp);
@@ -148,11 +153,29 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+
+        int current = playerHealth.curHealth;
+
+        Debug.Log(current);
+
         playerHealth.AdjustCurrentHealth(-damage);
-        if (playerHealth.curHealth <= 20 && !burnParticles.isPlaying)
+
+           current -= damage;
+
+        if (current >= 30 && burnParticles.isPlaying)
         {
+
+           // playerHealth.curHealth = current;
+            burnParticles.Stop();
+
+        }
+
+        if (current <= 30 && !burnParticles.isPlaying)
+        {
+            //playerHealth.curHealth = current;
             burnParticles.Play();
         }
+
 
         if (playerHealth.curHealth == 0 && !GameManager.isGamePaused())
         {
@@ -161,6 +184,8 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isKilled", true);
             explodeParticles.Play();
             gameManager.FinishGame(SecondPlayer);
+            
+            
             soundManager.PlayDeath();
             
         }

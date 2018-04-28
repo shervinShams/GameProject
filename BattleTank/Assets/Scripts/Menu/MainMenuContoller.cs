@@ -41,6 +41,13 @@ public class MainMenuContoller : MonoBehaviour
         BeginQuitingWithAction(LoadLavaScene);
     }
 
+    public void StartLevelBossGame()
+    {
+        BeginQuitingWithAction(LoadBossScene);
+    }
+
+
+
     public void QuitGame()
     {
 #if UNITY_EDITOR
@@ -80,7 +87,7 @@ public class MainMenuContoller : MonoBehaviour
 
     void LoadSingGameScene()
     {
-        SceneManager.LoadScene("SingleGame");
+        SceneManager.LoadScene("SIngleGame");
     }
 
     void LoadMainMenuScene()
@@ -96,5 +103,10 @@ public class MainMenuContoller : MonoBehaviour
     void LoadLavaScene()
     {
         SceneManager.LoadScene("LevelLava");
+    }
+
+    void LoadBossScene()
+    {
+        SceneManager.LoadScene("LevelBoss");
     }
 }

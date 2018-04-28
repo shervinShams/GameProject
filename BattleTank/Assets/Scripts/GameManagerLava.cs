@@ -10,7 +10,6 @@ public class GameManagerLava : MonoBehaviour {
     public Image darkeningImage;
     public float quitingTime = 1.0f;
     private float restartTimer = 0f;
-    public float restartDelay = 3.0f;
 
     public GameObject player1;
     public GameObject player2;
@@ -18,7 +17,7 @@ public class GameManagerLava : MonoBehaviour {
     //public Text restartButtonText;
     //public GameObject resumeGameButton;
     public Text winText;
-    public Text gameOverTxt;
+    public Text countDown;
 
     public bool isGameBegan = true;
     public bool isPaused = false;
@@ -46,7 +45,7 @@ public class GameManagerLava : MonoBehaviour {
     {
         boardScript = GetComponent<BoardManager>();
         winText.enabled = false;
-        gameOverTxt.enabled = false;
+        countDown.enabled = false;
         StartGame();
     }
 
@@ -145,8 +144,8 @@ public class GameManagerLava : MonoBehaviour {
         winText.text = "";
         winText.enabled = false;
 
-        gameOverTxt.text = "";
-        gameOverTxt.enabled = false;
+        countDown.text = "";
+        countDown.enabled = false;
 
         boardScript.SetupScene();
         ResetPlayers();
@@ -196,19 +195,13 @@ public class GameManagerLava : MonoBehaviour {
             GetHighScore(1);
         }
 
-        //gameOverTxt.text = "PLAYER " + playerNum + "IS THE WINNER !!!!!!";
-        //gameOverTxt.enabled = true;
 
-        //winText.text = "Player " + playerNum + " Wins!!!!!\nScore " + PlayerPrefs.GetInt("Score1") + " : " + PlayerPrefs.GetInt("Score2") + "\nPress enter to\ncontinue";
-        //winText.enabled = true;
+        GameManagerLava gManager = GetComponent<GameManagerLava>();
+        gManager.isPaused = true;
 
+       // MyWinText(playerNum);
 
-
-        if (restartTimer >= restartDelay)
-        {
-            BeginQuitingWithAction(LoadBossScene);
-        }
-
+        
     }
 
 
@@ -239,48 +232,90 @@ public class GameManagerLava : MonoBehaviour {
         int score1 = PlayerPrefs.GetInt("Score1");
         int score2 = PlayerPrefs.GetInt("Score2");
 
-        if (score1 > score2 && score1 >= 3)
+        if (score1 > score2 )
         {
-
-            gameOverTxt.text = "PLAYER " + playerNum + "  \nwill Battle with the \nBOSS!!!";
-            //winText.enabled = false;
-
-            // winText.text = gameOverTxt.text;
-            gameOverTxt.enabled = true;
-
-            winText.enabled = false;
-        }
-
-        else if (score2 > score1 && score2 >= 3)
-        {
-
-
             Debug.Log(score1);
-            Debug.Log(score2);
-            gameOverTxt.text = "PLAYER " + playerNum + "  \nwill Battle with the \nBOSS!!!";
-            //winText.enabled = false;
-
-            // winText.text = gameOverTxt.text;
-            gameOverTxt.enabled = true;
-
-            winText.enabled = false;
+            MyWinText("1");
+            StartCoroutine(UiHandler());
         }
 
-
-
-        else
+         if (score2 > score1 )
         {
-            winText.text = "Player " + playerNum + " Wins!!!!!\nScore " + PlayerPrefs.GetInt("Score1") + " : " + PlayerPrefs.GetInt("Score2") + "\nPress enter to\ncontinue";
-            winText.enabled = true;
-            //gameOverTxt.enabled = true;
 
+            Debug.Log(score2);
+            MyWinText("2");
+            StartCoroutine(UiHandler());
+        }
+
+         if (score1 == score2)
+        {
+            StartCoroutine(EqualScoreText());
+            
         }
     }
 
+    public IEnumerator EqualScoreText()
+    {
+        isPaused = true;
+        
+        winText.text = "Only One Winner Can Battle\n" + " The BOSS\n" + "This Level Will Restart\n" +" HARDER";
+        winText.enabled = true;
+        yield return new WaitForSeconds(5f);
+        winText.enabled = false;
+        countDown.text = "Same Level\n 3";
+        countDown.enabled = true;
+        yield return new WaitForSeconds(1);
+        countDown.text = "Same Level\n 2";
+        countDown.enabled = true;
+        yield return new WaitForSeconds(1);
+        countDown.text = "Same Level\n 1";
+        countDown.enabled = true;
+        yield return new WaitForSeconds(1);
+        countDown.text = "Go";
+        countDown.enabled = true;
+        yield return new WaitForSeconds(0.2f);
+        BeginQuitingWithAction(LoadLavaScene);
+    }
+
+    public IEnumerator UiHandler()
+    {
+
+        yield return new WaitForSeconds(3.5f);
+        winText.enabled = false;
+        countDown.text = "Next Level\n 3";
+        countDown.enabled = true;
+        yield return new WaitForSeconds(1);
+        countDown.text = "Next Level\n 2";
+        countDown.enabled = true;
+        yield return new WaitForSeconds(1);
+        countDown.text = "Next Level\n 1";
+        countDown.enabled = true;
+        yield return new WaitForSeconds(1);
+        countDown.text = "Go";
+        countDown.enabled = true;
+        yield return new WaitForSeconds(0.2f);
+        BeginQuitingWithAction(LoadBossScene);
+
+    }
+
+    public void MyWinText(string playerNumber)
+    {
+        isPaused = true;
+        winText.text = "WINNER\nPLAYER " + playerNumber + " WIN\nScore " + PlayerPrefs.GetInt("Score1") + " : " + PlayerPrefs.GetInt("Score2");
+        winText.enabled = true;
+
+
+
+    }
 
     void LoadBossScene()
     {
         SceneManager.LoadScene("LevelBoss");
+    }
+
+    void LoadLavaScene()
+    {
+        SceneManager.LoadScene("LevelLava");
     }
 
 }

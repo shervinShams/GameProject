@@ -90,22 +90,26 @@ public class HeartController : MonoBehaviour
     private void PlayerHeart(PlayerController player)
     {
         player.Heal(lifeGiving);
+        player.TakeDamage(-0);
     }
 
 
     private void PlayerSnowHeart(PlayeContorollerSnow playerSnow)
     {
         playerSnow.Heal(lifeGiving);
+        playerSnow.TakeDamage(-0);
     }
 
     private void PlayerLavaHeart(PlayerControllerLava playerLava)
     {
         playerLava.Heal(lifeGiving);
+        playerLava.TakeDamage(-0);
     }
 
     private void PlayerBossHeart(PlayerControllerBoss playerBoss)
     {
         playerBoss.Heal(lifeGiving);
+        playerBoss.TakeDamage(-0);
     }
 
 }

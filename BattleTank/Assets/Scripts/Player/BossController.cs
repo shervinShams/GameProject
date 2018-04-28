@@ -16,17 +16,9 @@ public class BossController : MonoBehaviour {
     public Transform target;
     public float chaseRange = 10f;
     public float attackRange = 8f;
-    private float lastAttackTime = 1f;
-    public float attackDelay = 1f;
-    public float shotForce = 250f;
 
     public GameObject playerHealthObject;
     public GameObject playerReloadObject;
-
-    //public float Velocity = 7.0f;
-    //public float MaximalSpeed = 40.0f;
-    //public float RotationSpeed = 2.0f;
-    //public float FrictionScale = 10.0f;
 
     public float ReloadSpeed = 1.0f;
     public float ShootingKick = 70.0f;
@@ -46,13 +38,9 @@ public class BossController : MonoBehaviour {
     private PlayerReload playerReload;
     private PlayerSoundManager soundManager;
     private Animator animator;
-    private AudioSource audioPlayer;
-
+ 
     private GameObject nextBullet;
 
-    //private string vAxisName = "Vertical";
-    //private string hAxisName = "Horizontal";
-    //private string attackAxisName = "Attack";
 
     // Use this for initialization
     void Awake()
@@ -67,13 +55,6 @@ public class BossController : MonoBehaviour {
 
         currentPatrolIndex = 0;
         currentPatrolPoint = patrolPoints[currentPatrolIndex];
-
-        //if (SecondPlayer)
-        //{
-        //    vAxisName += "Second";
-        //    hAxisName += "Second";
-        //    attackAxisName += "Second";
-        //}
     }
 
     void FixedUpdate()
@@ -114,19 +95,12 @@ public class BossController : MonoBehaviour {
 
         if (distanceToTarget < chaseRange) 
         {
-
-            
             Vector3 targetDir = (target.position - transform.position ).normalized ;
             float angleE = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg - 90f;
             Quaternion q2 = Quaternion.AngleAxis(angleE, Vector3.forward);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, q2, 180f);
             transform.Translate(Vector3.up * Time.deltaTime * chaseSpeed);
-            //int shoot = 1;
-            //if (shoot != 0 && timer >= ReloadSpeed)
-            //{
-            //    Shoot(localUp);
-            //}
-
+           
             timer += Time.deltaTime;
 
             float distanceToPlayer = Vector3.Distance(transform.position, target.position);
@@ -137,13 +111,6 @@ public class BossController : MonoBehaviour {
                 Quaternion q3 = Quaternion.AngleAxis(angleShoot, Vector3.forward);
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, q3, 180f);
 
-                //if (timer > lastAttackTime + attackDelay)
-                //{
-                //    
-                //    Shoot(localUp);
-
-                //}
-
                 int shoot = 1;
                 if (shoot != 0 && timer >= ReloadSpeed)
                 {
@@ -151,63 +118,8 @@ public class BossController : MonoBehaviour {
                     Shoot(localUp);    
                     
                 }
-
-
             }
-
         }
-
-        //float vertical = Input.;
-
-
-        //float vertical = Input.GetAxisRaw(vAxisName);
-        //float horizontal = Input.GetAxisRaw(hAxisName);
-        //float shoot = Input.GetAxisRaw(attackAxisName);
-
-        // Vector2 localUp = new Vector2(transform.up.x, transform.up.y);
-
-        //if (vertical != 0)
-        //{
-        //    Vector2 engineForce = Vector2.Lerp(Vector2.zero, localUp * vertical * MaximalSpeed, Velocity * Time.deltaTime);
-        //    rb.AddForce(engineForce);
-        //    soundManager.PlayRide();
-        //    animator.SetBool("isMoving", true);
-        //}
-        //else
-        //{
-        //    animator.SetBool("isMoving", false);
-        //}
-
-        //SetupParticles(vertical);
-
-        //Vector2 velocityVector = rb.velocity.normalized;
-        //float dot = Vector2.Dot(velocityVector, localUp);
-
-        //if (horizontal != 0)
-        //{
-        //    if (dot < 0 && rb.velocity.magnitude > 0 && vertical < 0)
-        //    {
-        //        rb.MoveRotation(rb.rotation + RotationSpeed * horizontal);
-        //    }
-        //    else
-        //    {
-        //        rb.MoveRotation(rb.rotation - RotationSpeed * horizontal);
-        //    }
-        //}
-
-
-        //if ((dot != 1) && (dot != -1) && (velocityVector.magnitude != 0))
-        //{
-        //    rb.velocity = Vector2.Lerp(rb.velocity, localUp * dot * rb.velocity.magnitude, FrictionScale * Time.deltaTime);
-        //}
-
-        //if (shoot != 0 && timer >= ReloadSpeed)
-        //{
-        //    Shoot(localUp);
-        //}
-
-        //timer += Time.deltaTime;
-
     }
 
     void SetupParticles(float vertical)
@@ -308,9 +220,8 @@ public class BossController : MonoBehaviour {
 
         if (collision.gameObject.CompareTag("Lava"))
         {
-            //audioPlayer.Play();
+           
             soundManager.PlayHurt();
-            //collision.gameObject.SendMessage("TakeDamage", Damage);
             TakeDamage(damage);
 
         }

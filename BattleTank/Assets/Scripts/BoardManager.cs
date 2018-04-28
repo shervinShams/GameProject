@@ -25,7 +25,7 @@ public class BoardManager : MonoBehaviour
     public GameObject[] floorTiles;
     public GameObject[] borderWallTiles;
 
-    public int destructibleCount = 80;
+    public int destructibleCount = 60;
     public GameObject[] destructibleTiles;
 
     public int lavaFireObjCount = 20;

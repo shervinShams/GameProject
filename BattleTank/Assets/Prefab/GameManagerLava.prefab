@@ -83,10 +83,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 0}
+  darkeningImage: {fileID: 0}
+  quitingTime: 1
   player1: {fileID: 0}
   player2: {fileID: 0}
   winText: {fileID: 0}
-  gameOverTxt: {fileID: 0}
+  countDown: {fileID: 0}
   isGameBegan: 1
   isPaused: 1
   isMenuShown: 1
