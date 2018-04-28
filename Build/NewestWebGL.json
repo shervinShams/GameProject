@@ -1,0 +1,14 @@
+{
+"companyName": "DefaultCompany",
+"productName": "BattleTank",
+"dataUrl": "NewestWebGL.data.unityweb",
+"asmCodeUrl": "NewestWebGL.asm.code.unityweb",
+"asmMemoryUrl": "NewestWebGL.asm.memory.unityweb",
+"asmFrameworkUrl": "NewestWebGL.asm.framework.unityweb",
+"TOTAL_MEMORY": 536870912,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"backgroundUrl": "NewestWebGL.jpg",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#FFFFFF"
+}
