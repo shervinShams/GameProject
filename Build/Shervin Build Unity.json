@@ -1,0 +1,14 @@
+{
+"companyName": "DefaultCompany",
+"productName": "BattleTank",
+"dataUrl": "Shervin Build Unity.data.unityweb",
+"asmCodeUrl": "Shervin Build Unity.asm.code.unityweb",
+"asmMemoryUrl": "Shervin Build Unity.asm.memory.unityweb",
+"asmFrameworkUrl": "Shervin Build Unity.asm.framework.unityweb",
+"TOTAL_MEMORY": 536870912,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"backgroundUrl": "Shervin Build Unity.jpg",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#FFFFFF"
+}
